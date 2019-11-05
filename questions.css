@@ -1,0 +1,21 @@
+body{
+   margin: 20px!important;
+}
+.wrapper{
+    margin: 0 auto; 
+    width: 700px; 
+    text-align: center; 
+     
+}
+.container{
+    display: none;
+}
+
+#time{
+    
+}
+
+#h-score{
+  
+}
+
