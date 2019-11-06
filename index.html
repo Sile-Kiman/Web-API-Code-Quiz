@@ -6,22 +6,22 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Code Quiz</title>
-    <link rel="stylesheet" href="../assets/css/reset.css">
+    <!-- <link rel="stylesheet" href="../assets/css/reset.css"> -->
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        
-        <link rel="stylesheet" href="questions.css">
+
+    <link rel="stylesheet" href="questions.css">
 </head>
 
 <body>
 
     <!---div that will contain the form of questionnaire page-->
     <div class="row header">
-        <div class="col-10">
+        <div class="col-md-10 col-sm-6">
             <h5 id="h-score">View highScore</h5>
         </div>
-        <div class="col-2">
+        <div class="col-md-2 col-sm-6">
             <h5 id="time">Time: 0 </h5>
         </div>
 
@@ -34,30 +34,42 @@
         <p>Try to answer the following code-related questions within the limi.
             Keep in mind that incorrect answers will penalize your score
             time by 15 seconds</p>
-            
-            <button id="start" class="btn btn-primary btn-lg" onclick="setupTimer()">Star Quiz</button>
+
+        <button id="start" class="btn btn-primary btn-lg">Star Quiz</button>
 
     </div>
 
-    <div class="container">
+    <!---This is begening of the  div that will contain all the questions  -->
+    <div class="divContainer">
 
-        <!---This is begening of the contact form -->
-        <form name="quiz" id="quiz-questions">
+        <!---This is begening of the first div that will display question 1  -->
 
-            <ol id="fields">
-                <p>Question 1</p>
-                <li><input id="choice1" type="radio" value=""></input>answer1</li>
+        <div id="question1">
+            <ol id="q1-list">
+                 
+
+            </ol>
+        </div>
+        <!---This is begening of the second div that will display question 2  -->
+        <div id="question2">
+
+            <ol id="q2-list">
                 
-                <p>Question 2</p>
-                <li><input id="choice2" type="radio" value="answer2"></input></li>
-                <br>
-                <p>Question 3</p>
-                <li><input id="choice3" type="radio" value="answer3"></input></li>
-                <p>Question 4</p>
-                <li><input id="choice4" type="radio" value="answer4"></input></li>
-        </form>
+            </ol>
+
+        </div>
+
+        <!---This is begening of the third div that will display question 3  -->
+        <div id="question2">
+
+            <ol id="q3-list">
+                
+            </ol>
+
+        </div>
+
     </div>
-<script src="questions.js"></script>
+    <script src="questions.js"></script>
 </body>
 
 </html>
