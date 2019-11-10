@@ -4,6 +4,13 @@ var btnElement = document.querySelector("#start");
 var divContEL = document.querySelector(".divContainer");
 var hElement = document.querySelector("#title");
 var oderListEl = document.querySelector("#q-list");
+var finishDiv = document.querySelector(".finish-section");
+var finalScore = document.querySelector("#result");
+var initialInput = document.querySelector("#inputInitial");
+var submitEl = document.querySelector(".btn btn-primary mb-2");
+var responsDiv = document.querySelector("#response");
+
+
 
 // Create an  array of questions
 var questions = [
@@ -22,10 +29,13 @@ var questions = [
         choices: ["ans1", "ans2", "ans3", "ans4"],
         answer: "ans1",
     },
+
 ]
+
 
 // display questions 
 function displayQuestions() {
+    //responsDiv.innerHTML='';
     var holdQ1Title = questions[i].title
     hElement.textContent = holdQ1Title
     var holdq1Choice1 = questions[i].choices[0];
@@ -35,6 +45,7 @@ function displayQuestions() {
 
     //This is a checkpoint to clear the list container at each loop
     oderListEl.innerHTML = '';
+    //responsDiv.innerHTML="";
 
     var liTag1 = document.createElement("li");
     liTag1.setAttribute("class", "all_li")
@@ -75,9 +86,10 @@ function displayQuestions() {
     allBtnEl.forEach(function (event) {
         event.addEventListener("click", onclickHandler)
     });
+     
 }
 
- 
+
 // set the time to zero
 var timer = 76;
 
@@ -97,38 +109,79 @@ function setupTimer() {
 document.addEventListener("click", function (event) {
     if (event.target === btnElement) {
         wrapperElement.style.display = "none";
-        setupTimer()
-        displayQuestions()
+        setupTimer();
+        setTimeout(function () {
+            displayQuestions();
+        }, 1000)
     }
 })
-
 
 // declare the index variable for the onclickHandler function
 var i = 0;
 
 // Add a function to compare the answers and display each questions as the buttons are clicked.
 function onclickHandler(event) {
+
     var answerText = event.target.textContent
-    if (answerText===questions[i].answer){
-        timer= timer;
-        alert("correct")
-    } else{
-        alert("wrong")
-        timer = timer-15
+    if (answerText === questions[i].answer) {
+        timer = timer;
+        responsDiv.setAttribute("style", "color: green")
+        responsDiv.textContent = "Correct";
+    } else {
+
+        responsDiv.setAttribute("style", "color: red")
+        responsDiv.textContent = "Wrong";
+        timer = timer - 15
     }
-    
-    if (i< questions.length) {
-        var cons = questions[i];
-        if (cons === 0){ 
-            questions[i].splice(i, 0)
-        }
+     
+    if (i <questions.length - 1) {
     
         i++;
-        displayQuestions() 
          
+        setTimeout(function () {
+            displayQuestions();
+            responsDiv.textContent="";
+        }, 1000)
+    } else {
+        setTimeout(function () {
+            responsDiv.textContent="";
+            displayResult();
+         },500)
+        
+        divContEL.innerHTML = '';  
+
     }
 
 }
+
+
+function displayResult() {
+    {
+        //finishDiv.style.visibility = "visible"
+        //btn.allBtnEl.removeEventListener(event, function(event){
+        finishDiv.style.visibility = "visible";
+        var HighScore = timer;
+        if (i == questions.length) {
+
+        }
+
+    }
+}
+//displayResult()
+    //}
+
+
+
+
+
+    //i++;
+    //displayQuestions()
+
+
+
+//}
+
+//}
 
 
 

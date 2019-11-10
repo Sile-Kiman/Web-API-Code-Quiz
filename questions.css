@@ -7,8 +7,8 @@ body{
     text-align: center; 
      
 }
-.container{
-    display: none;
+.finish-section{
+    visibility: hidden;
 }
 
 .all_btn{
