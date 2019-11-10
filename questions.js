@@ -152,7 +152,7 @@ function onclickHandler(event) {
 
     }
 
-}
+
 
 
 function displayResult() {
@@ -166,28 +166,13 @@ function displayResult() {
         }
 
     }
+
 }
-//displayResult()
-    //}
 
 
 
 
-
-    //i++;
-    //displayQuestions()
-
-
-
-//}
-
-//}
-
-
-
-
-
-
+}
 
 
 
