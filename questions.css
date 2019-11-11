@@ -8,8 +8,17 @@ body{
      
 }
 .finish-section{
+    margin: 0 auto; 
+    width: 900px; 
     visibility: hidden;
 }
+
+.final-page{
+
+    margin: 0 auto; 
+    width: 900px; 
+    visibility: hidden;
+ }
 
 .all_btn{
     background: darkmagenta; 
@@ -25,8 +34,21 @@ body{
     
     
 }
+.myBtn{
+    background: darkmagenta; 
+    padding: 10px;
+    margin: 10px;
+    width: 20%; 
+    border: 1px solid cornsilk;
+    border-radius: 5px;
+    color: white;   
+    font-size: 1.em;
+    /* text-align: justify; */
 
-#h-score{
-  
+}
+
+button{
+    background: darkmagenta!important; 
+     
 }
 

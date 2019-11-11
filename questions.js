@@ -6,9 +6,11 @@ var hElement = document.querySelector("#title");
 var oderListEl = document.querySelector("#q-list");
 var finishDiv = document.querySelector(".finish-section");
 var finalScore = document.querySelector("#result");
-var initialInput = document.querySelector("#inputInitial");
+var errMsg = document.querySelector("#errorSmg");
+var initialInput = document.querySelector("#inputInitial").value;
 var submitEl = document.querySelector(".btn btn-primary mb-2");
 var responsDiv = document.querySelector("#response");
+var finaPageEl = document.querySelector("#final-page");
 
 
 
@@ -91,16 +93,16 @@ function displayQuestions() {
 
 
 // set the time to zero
-var timer = 5;
+var timer = 45;
 
 // this is the timer funtion which will start counting as soon as the quiz starts
 function setupTimer() {
     var timeCount = setInterval(function () {
         timer--;
         var timeReset = timeElement.textContent = "Time:" + " " + timer;
-        if (timer === 0 || i ===questions.length-1){
+        if (timer === 0 || i === questions.length - 1) {
             clearInterval(timeCount);
-            timer =timer;
+            timer = timer;
             var timeReset = timeElement.textContent = "Time:" + " " + timer;
             //clearInterval(timeCount);
             timeElement.textContent = timeReset;
@@ -116,9 +118,21 @@ document.addEventListener("click", function (event) {
         setTimeout(function () {
             displayQuestions();
         }, 1000)
+
     }
+
 })
 
+function displayZero() {
+    timer = timer;
+    console.log(timer)
+    if (timer === 0 && i < questions.length - 1) {
+        console.log(timer)
+        alert("hello")
+        document.innerHTML = '';
+    }
+
+}
 // declare the index variable for the onclickHandler function
 var i = 0;
 
@@ -134,43 +148,90 @@ function onclickHandler(event) {
 
         responsDiv.setAttribute("style", "color: red")
         responsDiv.textContent = "Wrong";
-        timer =timer-15;
+        timer = timer - 15;
         console.log(timer)
     }
 
-    if (i < questions.length -1 || timer >0) {
+    if ((i < questions.length - 1) && (timer >= 0)) {
 
-       i++;
- 
+        i++;
+
         setTimeout(function () {
             displayQuestions();
             responsDiv.textContent = "";
         }, 1000)
     } else {
-        
         setTimeout(function () {
             responsDiv.textContent = "";
             displayResult();
-            
+
         }, 500)
-         
+
         //stopTimer()
         divContEL.innerHTML = '';
+        //displayZero();
+    }
+
+
+
+    //Function to display users final scrore 
+    function displayResult() {
+
+        finishDiv.style.visibility = "visible";
+        timeElement.textContent = "Time:" + " " + timer;
+        var HighScores = timer;
+        localStorage.getItem(HighScores)
+        finalScore.textContent = "Your finally score is: " + HighScores;
+        //localStorage.getItem(highScore)
+        localStorage.setItem("HighScores", HighScores)
+        //var initialInput = document.querySelector("#inputInitial").value;
+
+
 
     }
 
-//Function to display users final scrore 
-function displayResult() {
-    
-        finishDiv.style.visibility = "visible";
-        var HighScores = timeElement.textContent = "Time:" + " " + timer;
-        finalScore.textContent ="Your finally score is: " +HighScores;
-             
-        
-}
-
 
 }
+function renderLastItem() {
+    var a = localStorage.getItem("HighScores");
+    var b = localStorage.getItem("initial");
+    if (a && b === "") {
+        return
+    }
+    finishDiv.textContent="";
+    var finaPageEl = document.querySelector(".final-page");
+    finaPageEl.style.visibility = "visible";
+    var initialNadScore = document.querySelector("#staticEmail");
+    initialNadScore.textContent = a + " " + b;
+
+}
+
+function displayFinalHighScore() {
 
 
+    var holdInitial = initialInput.value;
+    console.log(holdInitial);
+}
+//document.addEventListener("click", storeInitial)
 
+document.addEventListener("submit", function (event) {
+    event.preventDefault();
+    var initialInput = document.querySelector("#inputInitial").value;
+    //var finaPageEl = document.querySelector("#final-page");
+    //var initialAndScore = document.querySelector("#staticEmail");
+
+    if (initialInput === "") {
+        errMsg.setAttribute("style", "color: red")
+        errMsg.textContent = "Initial input field cannot be empty"
+    } else {
+        errMsg.textContent = "";
+        localStorage.getItem(initialInput)
+        localStorage.setItem("Initial", initialInput)
+        console.log(initialInput)
+        renderLastItem()
+    }
+
+
+})
+
+//storeInitial()
