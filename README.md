@@ -33,7 +33,7 @@ Test:
 3-Verify all the pages that were supposed to display are there. 
 
 Image of the Site:
-<img scr= "images\startQuizPage.PNG">
+<img scr= "../images/startQuizPage.PNG">
 <img scr= "images\questionsPage.PNG">
 <img scr= "images\AlldonePage.PNG">
 <img scr= "images\errorEmptyField.PNG">
@@ -41,7 +41,7 @@ Image of the Site:
 <img scr= "images\HighScore.PNG">
 <img scr= "images\clearhighScore.PNG">
  
- 
+  
 
 
 License:
