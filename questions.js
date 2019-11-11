@@ -27,8 +27,8 @@ var questions = [
     {
         title: "question three.",
         choices: ["ans1", "ans2", "ans3", "ans4"],
-        answer: "ans1",
-    },
+        answer: "ans1"
+    }
 
 ]
 
@@ -86,20 +86,23 @@ function displayQuestions() {
     allBtnEl.forEach(function (event) {
         event.addEventListener("click", onclickHandler)
     });
-     
+
 }
 
 
 // set the time to zero
-var timer = 76;
+var timer = 5;
 
 // this is the timer funtion which will start counting as soon as the quiz starts
 function setupTimer() {
     var timeCount = setInterval(function () {
         timer--;
         var timeReset = timeElement.textContent = "Time:" + " " + timer;
-        if (timer === 0) {
+        if (timer === 0 || i ===questions.length-1){
             clearInterval(timeCount);
+            timer =timer;
+            var timeReset = timeElement.textContent = "Time:" + " " + timer;
+            //clearInterval(timeCount);
             timeElement.textContent = timeReset;
 
         }
@@ -109,7 +112,7 @@ function setupTimer() {
 document.addEventListener("click", function (event) {
     if (event.target === btnElement) {
         wrapperElement.style.display = "none";
-        setupTimer();
+        setupTimer()
         setTimeout(function () {
             displayQuestions();
         }, 1000)
@@ -131,45 +134,40 @@ function onclickHandler(event) {
 
         responsDiv.setAttribute("style", "color: red")
         responsDiv.textContent = "Wrong";
-        timer = timer - 15
+        timer =timer-15;
+        console.log(timer)
     }
-     
-    if (i <questions.length - 1) {
-    
-        i++;
-         
+
+    if (i < questions.length -1 || timer >0) {
+
+       i++;
+ 
         setTimeout(function () {
             displayQuestions();
-            responsDiv.textContent="";
+            responsDiv.textContent = "";
         }, 1000)
     } else {
-        setTimeout(function () {
-            responsDiv.textContent="";
-            displayResult();
-         },500)
         
-        divContEL.innerHTML = '';  
+        setTimeout(function () {
+            responsDiv.textContent = "";
+            displayResult();
+            
+        }, 500)
+         
+        //stopTimer()
+        divContEL.innerHTML = '';
 
     }
 
-
-
-
+//Function to display users final scrore 
 function displayResult() {
-    {
-        //finishDiv.style.visibility = "visible"
-        //btn.allBtnEl.removeEventListener(event, function(event){
+    
         finishDiv.style.visibility = "visible";
-        var HighScore = timer;
-        if (i == questions.length) {
-
-        }
-
-    }
-
+        var HighScores = timeElement.textContent = "Time:" + " " + timer;
+        finalScore.textContent ="Your finally score is: " +HighScores;
+             
+        
 }
-
-
 
 
 }
