@@ -15,7 +15,7 @@
 </head>
 
 <body>
-
+<div class="first-page">
     <!---div that will contain the form of questionnaire page-->
     <div class="row header">
         <div class="col-md-10 col-sm-6">
@@ -38,7 +38,7 @@
         <button id="start" class="btn btn-primary btn-lg">Star Quiz</button>
 
     </div>
-
+</div>
     <!---This is begening of the  div that will contain all the questions  -->
     <div class="divContainer">
 
@@ -74,23 +74,20 @@
     </div>
     <div class="final-page">
         <h2>highScores</h2>
-        
+
         <div class="col-sm-10">
             <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="1.">
 
         </div>
-            <button class="myBtn">Go Back</button>
-            <button class="myBtn">Clear highScores</button>
-
-
-        </div>
-
+        <button class="myBtn" onclick="init()">Go Back</button>
+        <button class="myBtn" onclick="clearScore()">Clear highScores</button>
 
 
     </div>
 
 
     <script src="questions.js"></script>
+    <script src="questionsFile.js"></script>
 </body>
 
 </html>
