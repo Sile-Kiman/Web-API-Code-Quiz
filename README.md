@@ -33,13 +33,13 @@ Test:
 3-Verify all the pages that were supposed to display are there. 
 
 Image of the Site:
-<img scr= "../images/startQuizPage.PNG">
-<img scr= "images\questionsPage.PNG">
-<img scr= "images\AlldonePage.PNG">
-<img scr= "images\errorEmptyField.PNG">
-<img scr= "images\Enter Initial.PNG">
-<img scr= "images\HighScore.PNG">
-<img scr= "images\clearhighScore.PNG">
+<img scr= "startQuizPage.PNG">
+<img scr= "questionsPage.PNG">
+<img scr= "AlldonePage.PNG">
+<img scr= "errorEmptyField.PNG">
+<img scr= "Enter Initial.PNG">
+<img scr= "HighScore.PNG">
+<img scr= "clearhighScore.PNG">
  
   
 
