@@ -37,8 +37,7 @@ body{
 .myBtn{
     background: darkmagenta; 
     padding: 10px;
-    margin: 10px;
-    width: 20%; 
+    margin: 10px; 
     border: 1px solid cornsilk;
     border-radius: 5px;
     color: white;   
