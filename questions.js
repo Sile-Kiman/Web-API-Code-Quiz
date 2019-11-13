@@ -1,16 +1,17 @@
 /**set the time to zero*/
 var timer = 76;
-
+var timeCount;
 /**this is the timer funtion which will start counting as soon as the quiz starts*/
 function setupTimer() {
-    var timeCount = setInterval(function () {
+    timeCount = setInterval(function () {
         timer--;
         var timeReset = timeElement.textContent = "Time:" + " " + timer;
-        if (timer === 0 || i === questions.length - 1) {
+        if (timer === 0) {         
             clearInterval(timeCount);
             timer = timer;
             var timeReset = timeElement.textContent = "Time:" + " " + timer;
-             timeElement.textContent = timeReset;
+            timeElement.textContent = timeReset;
+             
         }
     }, 1000)
 }
@@ -43,10 +44,9 @@ function onclickHandler(event) {
         responsDiv.setAttribute("style", "color: red")
         responsDiv.textContent = "Wrong";
         timer = timer - 15;
-        console.log(timer)
-    }
+     }
 
-    if ((i < questions.length - 1) && (timer >= 0)) {
+    if (i < questions.length-1) {
 
         i++;
 
@@ -58,14 +58,14 @@ function onclickHandler(event) {
         setTimeout(function () {
             responsDiv.textContent = "";
             displayResult();
-
+            clearInterval(timeCount);
+          
         }, 500)
         divContEL.innerHTML = '';
      }
 
     /**Function to display users final score */
     function displayResult() {
-
         finishDiv.style.visibility = "visible";
         timeElement.textContent = "Time:" + " " + timer;
         var HighScores = timer;
@@ -101,8 +101,7 @@ document.addEventListener("submit", function (event) {
         errMsg.textContent = "";
         localStorage.getItem(initialInput)
         localStorage.setItem("Initial", initialInput)
-        console.log(initialInput)
-        renderLastItem()
+         renderLastItem()
     }
 
 })
