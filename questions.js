@@ -1,21 +1,16 @@
 /**set the time to zero*/
 var timer = 76;
 var timeCount;
+
 /**this is the timer funtion which will start counting as soon as the quiz starts*/
 function setupTimer() {
     timeCount = setInterval(function () {
         timer--;
         var timeReset = timeElement.textContent = "Time:" + " " + timer;
-        if (timer === 0) {         
-            clearInterval(timeCount);
-            timer = timer;
-            var timeReset = timeElement.textContent = "Time:" + " " + timer;
-            timeElement.textContent = timeReset;
-             
-        }
+         
     }, 1000)
 }
-
+ 
 /**  Here is the event listener to start the timer and hide the quiz button*/
 document.addEventListener("click", function (event) {
     if (event.target === btnElement) {
@@ -33,8 +28,13 @@ var i = 0;
 /**Add a function to compare the answers and 
  * display each questions as the buttons are clicked.*/
 function onclickHandler(event) {
-
-    var answerText = event.target.textContent
+     
+    if(timer===0){
+        clearInterval(timeCount);
+        divContEL.style.display="none";
+        displayResult();
+    }
+    var answerText = event.target.textContent 
     if (answerText === questions[i].answer) {
         timer = timer;
         responsDiv.setAttribute("style", "color: green")
@@ -45,25 +45,29 @@ function onclickHandler(event) {
         responsDiv.textContent = "Wrong";
         timer = timer - 15;
      }
-
+    
+      
+     
     if (i < questions.length-1) {
 
-        i++;
+      i++;
 
-        setTimeout(function () {
-            displayQuestions();
-            responsDiv.textContent = "";
-        }, 1000)
-    } else {
+      setTimeout(function () {
+      displayQuestions();
+      responsDiv.textContent = "";
+    }, 1000)
+    }else {
         setTimeout(function () {
             responsDiv.textContent = "";
             displayResult();
             clearInterval(timeCount);
           
         }, 500)
+    
+
         divContEL.innerHTML = '';
      }
-
+     
     /**Function to display users final score */
     function displayResult() {
         finishDiv.style.visibility = "visible";
