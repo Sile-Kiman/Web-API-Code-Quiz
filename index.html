@@ -40,62 +40,63 @@
                     <p>Try to answer the following code-related questions within the limit.
                         Keep in mind that incorrect answers will penalize your score
                         time by 15 seconds</p>
-                
-                <button id="start" class="btn btn-primary btn-lg">Start Quiz</button>
-            </div>
+
+                    <button id="start" class="btn btn-primary btn-lg">Start Quiz</button>
+                </div>
             </div>
         </div>
-    
-    
-    <!---This is begening of the  div that will contain all the questions  -->
-    <div class="divContainer">
-
-        <!---This is begening of the first div that will display each questions -->
-
-        <h3 id="title">
-
-        </h3>
-        <ol id="q-list">
 
 
-        </ol>
+        <!---This is begening of the  div that will contain all the questions  -->
+        <div class="divContainer">
 
-    </div>
-    <br>
-    <div id="response"> </div>
+            <!---This is begening of the first div that will display each questions -->
 
-    <div class="finish-section">
-        <h3>All Done!</h3>
+            <h3 id="title">
 
-        <p id="result"> </p>
-        <p id="errorSmg"></p>
+            </h3>
+            <ol id="q-list">
 
-        <form class="form-inline">
-            <div class="form-group mb-2">
-                <h5 id="staticEmail2">Enter initials </h5>
-            </div>
-            <div class="form-group mx-sm-3 mb-2">
-                <input type="text" class="form-control" id="inputInitial" placeholder="Enter your initials"> </div>
-            <button type="submit" class="btn btn-primary mb-2">Submit</button>
-        </form>
 
-    </div>
-    <div class="final-page">
-        <h2>HighScores</h2>
-
-        <div class="col-sm-10">
-            <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="1.">
+            </ol>
 
         </div>
-        <button class="myBtn" onclick="init()">Go Back</button>
-        <button class="myBtn" onclick="clearScore()">Clear highScores</button>
+        <br>
+        <div id="response"> </div>
+
+        <div class="finish-section">
+            <h3>All Done!</h3>
+
+            <p id="result"> </p>
+            <p id="errorSmg"></p>
+
+            <form class="form-inline">
+                <div class="form-group mb-2">
+                    <h5 id="staticEmail2">Enter initials </h5>
+                </div>
+                <div class="form-group mx-sm-3 mb-2">
+                    <input type="text" class="form-control" id="inputInitial" placeholder="Enter your initials"> </div>
+                <button type="submit" class="btn btn-primary mb-2">Submit</button>
+            </form>
+
+        </div>
+        <div class="final-page">
+            <h2>HighScores</h2>
+
+            <div class="col-sm-10">
+                <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="1.">
 
 
-    </div>
+                <button class="myBtn" onclick="init()">Go Back</button>
+                <button class="myBtn" onclick="clearScore()">Clear highScores</button>
+
+            </div>
+
+        </div>
 
 
-    <script src="questions.js"></script>
-    <script src="questionsFile.js"></script>
+        <script src="questions.js"></script>
+        <script src="questionsFile.js"></script>
 </body>
 
 </html>

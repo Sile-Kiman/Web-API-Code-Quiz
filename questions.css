@@ -74,7 +74,7 @@ and (max-width:540px) {
         margin: 0px;
         text-align: justify;
         word-wrap: break-word;
-        width: 400px;
+        width: 100%;
     }
 
         
@@ -84,14 +84,14 @@ and (max-width:540px) {
 
     .finish-section{
         margin: 0px; 
-        width: 500px; 
+        width: 100%; 
         visibility: hidden;
     }
     
     .final-page{
 
         margin: 0px; 
-        width: 900px; 
+        width: 100%; 
         visibility: hidden;
      }
 }
