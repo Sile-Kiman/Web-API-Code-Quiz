@@ -1,13 +1,18 @@
 /**set the time to zero*/
 var timer = 76;
 var timeCount;
-
 /**this is the timer funtion which will start counting as soon as the quiz starts*/
 function setupTimer() {
     timeCount = setInterval(function () {
         timer--;
         var timeReset = timeElement.textContent = "Time:" + " " + timer;
-         
+       timer = timer;
+        if (timer <= 0) {         
+            clearInterval(timeCount);
+              
+            timeElement.textContent = timeReset;
+             
+        }
     }, 1000)
 }
  
@@ -29,7 +34,7 @@ var i = 0;
  * display each questions as the buttons are clicked.*/
 function onclickHandler(event) {
      
-    if(timer===0){
+    if(timer<=0){
         clearInterval(timeCount);
         divContEL.style.display="none";
         displayResult();
