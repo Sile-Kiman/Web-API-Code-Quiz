@@ -27,22 +27,21 @@ I used the following sites for my  research  during this assignment:
 3-Classmates
 4-TA’s and the instructor 
 
+Deploy Link:
+https://sile-kiman.github.io/Web-API-Code-Quiz/index.html
+
+
 Test:
 1 -Verify the page’s  look and feel matches the wireframe provided for this assignment- (this maybe slightly different) 
 2- Check the other spec such as when you clicks on each button the appropriate actions are performed. 
 3-Verify all the pages that were supposed to display are there. 
 
 Image of the Site:
-<img scr= "startQuizPage.PNG">
-<img scr= "questionsPage.PNG">
-<img scr= "AlldonePage.PNG">
-<img scr= "errorEmptyField.PNG">
-<img scr= "Enter Initial.PNG">
-<img scr= "HighScore.PNG">
-<img scr= "clearhighScore.PNG">
- 
-  
-
+<img scr="assets/images/startQuizPage.PNG">
+<img scr="assets/images/questionsPage.PNG">
+<img scr="assets/images/errorEmptyField.PNG">
+<img src="assets/images/HighScore.PNG">
+<img src="assets/images/clearhighScore.PNG">
 
 License:
 MIT License

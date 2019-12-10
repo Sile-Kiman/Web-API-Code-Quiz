@@ -44,7 +44,7 @@ var questions = [
         choices: ["getElementById(‘idname’)", "getElementsByClass(‘classname’)", 
         "getElementsByTagName(‘tagname’)", "querySelectorAll()"],
         answer: "querySelectorAll()",
-    },
+    }
 ]
 
 
